@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compaign Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Compaign Dashboard</h1>
+
+  <form id="createForm">
+    <h2>Create New Compaign</h2>
+    <input type="text" placeholder="Name" id="name" required />
+    <input type="text" placeholder="Description" id="description" required />
+    <select id="status" required>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+      <option value="deleted">Deleted</option>
+    </select>
+    <input type="text" placeholder="Leads (comma-separated)" id="leads" required />
+    <input type="text" placeholder="Account IDs (comma-separated)" id="accountIDs" required />
+    <button type="submit">Create</button>
+  </form>
+
+  <h2>All Compaigns</h2>
+  <button onclick="fetchCompaigns()">Refresh List</button>
+  <div id="compaignList"></div>
+
+  <hr />
+
+  <form id="geminiForm">
+    <h2>Generate LinkedIn Message</h2>
+    <input type="text" id="gname" placeholder="Name" required>
+    <input type="text" id="gjob" placeholder="Job Title" required>
+    <input type="text" id="gcompany" placeholder="Company" required>
+    <input type="text" id="glocation" placeholder="Location" required>
+    <textarea id="gsummary" placeholder="Summary" required></textarea>
+    <button type="submit">Generate Message</button>
+  </form>
+
+  <div id="geminiMessage"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
